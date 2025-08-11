@@ -1,0 +1,6 @@
+Sobre C#
+Em um console aplication
+
+input do usuário => Método Console.ReadLine()
+Em C#, o método Console.ReadLine() sempre retorna uma string - ou seja, mesmo que o usuário digite um número (como int, double, etc.), é necessário converter essa string para o tipo desejado Ex: int.Parse()
+

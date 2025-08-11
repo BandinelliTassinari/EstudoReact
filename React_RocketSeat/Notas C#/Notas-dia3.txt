@@ -1,0 +1,69 @@
+Namespace, é uma forma de organizar os arquivos/classes dentro do nosso projeto.
+
+
+Modificadores de acesso
+	public - acesso total, qualquer código/lugar
+	private - acesso restrito à própria classe
+	internal - acesso dentro do mesmo projeto
+
+.NET é uma plataforma composta de diversas bibliotecas.
+
+
+Criação de uma API usando o .NET
+	1.Definir uma estrutura 
+-Identifique as funcionalidades e os modelos de dados que sua API irá expor. Projete uma estrutura de API limpa e intuitiva
+	2.Implementar os Endpoints
+-Escreva código para lidar com os métodos para cada Endpoint
+	3.Adicionar lógica e regras de negócio
+-Implemente a funcionalidade principal da sua API, como recuperação de dados, processamento e todas as regras de negócio necessárias.	
+
+HTTP
+HTTP é a sigla Hypertext Transfer Protocol. É um protocolo usado para enviar e receber dados pela Web, o HTTP é baseado em uma arquitetura cliente-servidor, na qual o cliente envia solicitações ao servidor para recuperar ou enviar informações.
+Quando um cliene faz uma requisição, o servidor responde com um código de status e os dados solicitados.
+	Fluxo HTTP
+	1.Cliente envia uma solicitação-Quando um usuário interage com uma página na Web, o navegador envia uma solicitação ao servidor
+	2.O servido processa a solicitação-O servidor recebe a solicitação e determina como lidar com ela
+	3.O servidor envia a resposta-O servidor envia uma resposta de volta ao cliente, que pode incluir dados ou instruções para serem executadas.
+
+Headers 
+O cabeçalho em uma solicitação HTTP para uma API contém informações adicionais sobre a solicitação ou a resposta. Ele inclui metadados, como tipo de conteúdo, token de autorização, cookies, preferências de idioma e muito mais. Esses cabeçalhos fornecem detalhes cruciais para que o servidor processe a solicitação e para que o cliente interprete a resposta.
+
+SSL
+O SSL(Secure Sockets Layer) é um protocolo que criptografa os dados trocados entre um navegador e um servidor da Web. Ele garante uma comunicação segura, protege informações confidenciais e gera confiança entre os usuários.
+
+No HTTPS o S significa que o protocolo de segurança SSL esta sendo utilizado.
+
+API Web
+1.URL- Uma chamada de API inclui uma URL, que indica o recurso específico que indica o recurso específico que desejamos acessar em um servidor web.
+2.Método HTTP- Utilizamos um método HTTP(GET,POST,PUT,DELETE) para indicar a ação que desejamos executar no recurso especificado.
+3.Headers- Podemos adicionar informações adicionais no cabeçalho da solicitação, como autenticação, cache, tipo de conteúdo, entre outros.
+4.Corpo Solicitado- Em algumas chamadas de API, podemos incluir um corpo na soliitação, contendo dados adicionais necessários para a ação a ser executada.
+
+
+Anatomia da resposta de uma API 
+-Status Code-
+ A resposta de uma chamada de API inclui um código de status que indica se a solicitação foi bem-sucedida, com erro, etc.
+-Header-
+ Assim omo na soliitação, a resposta também pode incluir headers adicionais que fornecem informações sobre o conteúdo, cache, autenticação, etc.
+-Corpo da Resposta
+ O corpo da resposta contém os dadeos retornados pela API. Pode ser um documento JSON, XML, HTML ou qualquer outro formato adequado.
+
+Status HTTP
+	200-OK
+	201-Criado
+	204-Sem conteúdo
+	400-Requisição inválida
+	401-Não autorizado
+	403-Proibido
+	404-Recurso solicitado não encontrado no servidor
+	505-Erro interno do servidor
+
+CRUD
+É um acrônimo pas as quatro operações básicas de manipulação de dados em sistemas:
+C-Create	Criar(inserir dados)
+R-Read		Ler(consultar dados)
+U-Update	Atualizar(modificar dados)
+D-Delete	Excluir(remover dados)
+Essas operações são comuns em aplicações que interagem com banco de dados, como sistemas de cadastro, e-commerce, etc.
+Normalmente, um projeto CRUD envolve uma interface (como uma página web ou app) conectada a um banco de dados, permitindo que o usuário gerencie informações - por exemplo, um sistema de cadastro de clientes, produtos ou tarefas.  
+

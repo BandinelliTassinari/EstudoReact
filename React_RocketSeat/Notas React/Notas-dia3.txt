@@ -1,0 +1,45 @@
+[Hooks Customizados]
+ Um hook customizado, ou custom hook, é uma função do JavaScript customizada que encapsula lógica dentro do contexto do React
+ Ele funciona como um hook nativo do React (useState, useEffect, etc.), mas é criado pelo desenvolvedor para atender a um caso de uso específico, tornando o código mais organizado, reutilizável e fácil de manter e testar
+  O que evitar em um custom hook
+	-Criar o evento do componente direto. O melhor é criar uma função e um evento a executa
+	-Criar e retornar estados específicos para renderização de elementos
+	-Se caso de uso for muito específico, pode ser que você não precise de um custom hook, pode ser resolvido no componente
+
+
+[Tooling]
+ No contexto de um projeto em React, o termo tooling se refere ao conjunto de ferramentas e configurações que ajudam no desenvolvimento, construção, teste e manutenção da aplicação. Essas ferramentas não fazem parte diretamente do React, mas são essenciais para trabalhar com ele de forma eficiente.
+
+[useRef]
+ Uma referência (chamada também de ref) é uma forma de acessar diretamente um elemento DOM ou um valor mutávek fora do fluxo de renderização
+ É como se fossse um "getElementById", "querySelector" ou função similar que coleta o DOM do lado do JavaScript
+ A referência retorna um current que é o elemento HTML do DOM, se existir, é possível fazer manipulações com Vanilla JavaScript
+	Por que não usar o JavaScript direto?
+	 -A referência é a forma ""react-friendly" de trabalhar com o DOM no nível do JavaScript,seguindo a mesma ideia dos eventos
+	 -Ele integra com o ciclo de vida do componente automaticamente, sem necessitar utilizar o "unmount" para remover qualquer conexão
+	 -É limitado ao comonente atual, sem possivilidade de interferências em elementos de forma global.
+
+----
+Memoização é uma técnica de otimização usada para evitar cáculos.
+----
+
+[useMemo]
+ O Hook de memoização é uma tecnica de guardar o resultado de uma função para evitar recalcular ou realizar novamente uma funçãose os dados de entrada não mudaram.
+ No React, isso evita que componentes ou valores caros sejam reprocessados desnecessariamente e também podem ser utilizados para geração de valores mais específicos que requerem uso de mais processamento. 
+ Usar esse Hook por padrão pode adicionar complexidade no entendimento do código e nem sempre traz ganho real.
+
+	Hook:useMemo
+	-Retorna o valor memoizado, e só chama a função novamente caso as depenências mude o seu valor real. mudanças de alocação de memória não fazem o useMemo executar
+	-Ideal para cálculos mais complexos, grandes processamentos de dados, entre outros casos.
+	
+	Função:React.memo
+	-Ele tem a mesma ideia do useMemo, mas funciona como um "wrapper" do componente
+	-Previne re-render do compenente se as props não mudarem
+	-Por padrão o React 19 já faz isso automaticamente onde é possível, mas caso necessite você pode forçar o comportamento
+
+[useCallback]
+ O callback também é um tipo de memoização mas diferente do memo ele guarda e retona uma função memoizada e não o resultado de algum precessamento.
+ Toda vez que o componente renderiza, ele cria novas alocações na memoória para aquela função e isso quebra a referência anterior.
+ É interessante memoizar funçções que são passadas via props ou utilizadas dentro do useEffect.
+ Se você colocar uma função direto na lista de dependências, o useEffect vai rodar toda vez que ela mudar, ou seja, sempre.
+ Então você memoiza uma função para manter a mesma referência entre renders e evitar re-renders ou efeitos desnecessários.

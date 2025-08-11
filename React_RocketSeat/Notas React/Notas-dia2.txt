@@ -1,0 +1,40 @@
+DOM
+O DOM significa Document Object Model. Ele é uma representação estruturada de um documento HTML ou XML como uma árvore de objetos. Cada elemento da página (como <div>,<p>,<button>,etc.) vira um nó nessa árvore, e pode ser acessado e manipulado via JavaScript.
+
+DOM é a estrutura que representa os elementos HTML de uma página como objetos que podem ser manipulados com JavaScript.
+
+SyntheticEvent
+SyntheticEvent é o sistema que encapsula os eventos no React assim melhorando o desempenho e a compatibilidade entre navegadores.
+
+Parâmetros
+Parâmetros são valores que você passa para uma função quando a chama. Eles permitem que a função trabalhe com dados diferentes a cada execução.
+
+[[React Hooks]]
+ Os hooks são como serviços reutilizáveis, porém obrigatoriamente criados com funções. Você pode utilizar eles para reaproveitamento e organização de código.
+
+ [useState()] é um Hook do React que permite gerenciar o estado dentro de um componente funcional.
+
+ A renderização condicional no React permite exibir ou ocultar elementos com base em uma condição. Isso é útil para alternar interfaces, mostrar mensagens dinãmicas e muito mais 
+
+  Formas de fazer renderização condicional
+  Operador ternário (?:) - Usado quando há duas opções  possíveis.
+  Curto-circuito (&&) - Usado quando só há um conteúdo a exibir caso a condição seja verdadeira.
+  Condicional tradicional(if) - Melhor para lógica mais complexa antes do retorno.
+
+ [useContext()] (ou store ou API de Contexto) é um React Hook que permite compartilhar estados e funções entre componentes sem precisar passar props manualmente de um componente para outro.
+  Sem o Context API, precisaríamos passar as informações como props , de pai para filho, o que pode se tornar um grande problema ao escalar.
+  Com o Context API, criamos um contexto (Context) e um "provedor" (Provider) que pode ser acessado por qualquer componente na árvore.
+  É principalmente utilizado quando você precisa passar dados de filho para pai, ou em componentes paralelos.
+  Não é usado sempre, pois o Context API pode ser um "overkill" e apenas usa-la pode causar perda de performace. Para estados simples, use o "useState".
+
+ [useEffect()] é um Hook que permite executar efeitos colaterais em componentes funcionais. Ele é essencial para lidar com tarefas como 
+	-Buscar dados de uma API
+	-Manipular o DOM diretamente
+	-Configurar subscrições(como WebSockets)
+	-Iniciar timers ou intervalos
+	
+  Todos componentes no React têm um ciclo de vida (ou efeitos colatarais), que são os momentos em que eles:
+	-Construídos	(mount)		executa ações iniciais
+	-Atualizam	(update)	atualiza seu estado ou prop
+	-Desmontam	(unmount)	quando removido do DOM
+  Os ciclos de vida são fundamentais para entender quando e como o React deve atualizar um componente, executar efeitos colaterais, ou limpar recursos.

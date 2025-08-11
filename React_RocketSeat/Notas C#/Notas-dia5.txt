@@ -1,0 +1,4 @@
+ssms bagulho de SQL
+
+
+CORS significa Cross-Origin Resourse Sharing(Compartilhamento de Recursos entre Origens Diferentes).É um mecanismo de segurança implementado pelos navegadores para controlar como recursos de uma aplicação web podem ser acessados por outra aplicação hospedada em um domínio diferente.

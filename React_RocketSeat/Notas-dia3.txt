@@ -1,0 +1,11 @@
+[Hooks Customizados]
+ Um hook customizado, ou custom hook, é uma função do JavaScript customizada que encapsula lógica dentro do contexto do React
+ Ele funciona como um hook nativo do React (useState, useEffect, etc.), mas é criado pelo desenvolvedor para atender a um caso de uso específico, tornando o código mais organizado, reutilizável e fácil de manter e testar
+  O que evitar em um custom hook
+	-Criar o evento do componente direto. O melhor é criar uma função e um evento a executa
+	-Criar e retornar estados específicos para renderização de elementos
+	-Se caso de uso for muito específico, pode ser que você não precise de um custom hook, pode ser resolvido no componente
+
+
+Para front ANT DESIGN ñ tailwind 
+

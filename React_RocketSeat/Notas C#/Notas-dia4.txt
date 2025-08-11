@@ -1,0 +1,17 @@
+Criando uma API em .NET
+No controller criado o atributo [ProducesResponseType(typeof(User), StatusCodes.Status200OK)] é necessário para documentar explicitamente quais tipos de resposta e códigos de status sua action pode retornar. 
+	-Em resumo é para documentação, facilita a visualização do que esperar da resposta do endpoint.
+	-O método return Ok(response); é o que realmente envia o status HTTP na resposta
+
+Herança entre classes
+-É um conceito da programação orientada a objetos que permite que uma classe reutilize os membros (como métodos e propriedades) de outra classe.{A classe que herda é chamada de classe derivada, e a que é herdada é a classe base.}
+
+Modificador de acesso 
+	[Protected]
+	Define que um membro da classe só pode ser acessado dentro da própria classe e por classes que a herdam. É mais restrito que public, mas mais aberto que private.
+	[Abstract]
+	Indica que uma classe ou método é incompleto e precisa ser implementado por uma classe derivada. Classes abstratas não podem ser instanciadas diretamente.
+	[Virtual]
+	Permite que um método seja sobrescrito em uma classe derivada. É usado para definir um comportamento padrão que pode ser modificado.
+	[Sealed]
+	Impede que uma classe seja herdada ou que um método sobrescrito seja novamente sobrescrito. Serve para limitar a extensão de herança ou modificação.

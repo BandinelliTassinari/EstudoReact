@@ -1,0 +1,87 @@
+O que é SOLID?
+SOLID é um acrônimo que representa cinco princípios fundamentais da programação orientada a objetos, criados para tornar o código mais manutenível, flexível e escalável.
+Os princípios são:
+
+S - Single Responsibility Principle(SRP)
+Esse princípio afirma que uma classe deve ter apenas uma razão para mudar, ou seja, ela deve possuir uma única responsabilidade bem definida. Quando uma classe assume múltiplas funções - como lógica de negócio, persistência de dados e apresentação - ela se torna difícil de manter e testar. Separar essas responsabilidades em classes distintas torna o sistema mais modular e facilita a manutenção, pois mudanças em uma funcionalidade não agetam outras. Em essência, o SRP promove a coesão e reduz acoplamento, tornando o código mais limpo e organizado.
+
+O - Open/Closed Principle(OCP)
+Segundo esse pincípio, os componentes de software (classes, módulos, funções) devem estar abertos para extensão, mas fechados para modificação. Isso significa que é possível adicionar novos comportamentos ao sistema sem alterar o código existente. Essa abordagem é essencial para evitar regressões e manter a estabilidade do sistema. Um exemplo clássico é o uso de herança ou interfaces: ao invés de modificar uma classe diretamente, você cria uma nova que estende ou implementa a original, adicionando o novo comportamento. Isso favorece a escalabilidade e a reutilização de código.
+
+L - Liskov Substitution Principle (LSP)
+Esse princípio estabelece que objetos de uma classe derivade devem poder substituir objetos da classe base sem alterar a correção do programa. Em outras palavras, se uma classe Filha herda de uma classe Pai, ela deve manter o comportamento esperado da Pai. Isso garante que o sistema continue funcionando corretamente mesmo quando usamos subclasses no lugar das superclasses. Violá-lo pode causar bugs difíceis de detectar, especialmente em sistemas que usam polimorfismo. O LSP reforça a ideia de que a herança deve preservar a integridade do contrato da classe base.
+
+
+I - Interface Seggregation Principle (ISP)
+Esse princípio recomenda que uma classe não deve ser forçada a implementar interfaces que ela não utiliza. Em vez de criar interfaces grandes e genéricas, é melhor dividi-las em interfaces menores e mais específicas. Isso evita que classes sejam obrigadas a implementar métodos irrelevantes, o que gera código inútil ou confuso. O ISP promove a criação de contratos mmais claros entre os componentes do sistema, facilitando a manutenção e a evolução do código. É especialmente útil em sistemas com múltiplos tipos de clientes que interagem com diferentes partes da aplicação.
+
+D - Dependency Incersion Principle (DIP)
+Esse princípio propõe que módulos de alto nível não devem depender de módulos de baixo nível, mas ambos devem depender de abstrações. Além disso, abstrações não devem depender de detalhes, mas os detalhes devem depender das abstrações. Em termos práticos, isso significa que o código deve depender de interfaces ou classes abstratas, e não de implementações concretas. O DIP facilita a inversão do controle e a injeção de dependências, tornando o sistema mais flexível, testável e desacoplado. Ele é fundamental para arquiteturas modernas como a Clean Architecture e o Hexagonal Architecture.
+
+
+(Conceitos citados)
+Lógica de negócio
+É o conjunto de regras e operações que definem como o sistema deve funcionar para atender aos objetivos do negócio. Por exemplo, em um sistema bancário, a lógica de negócio inlui regras como "não permitir saque se o saldo for insuficiente" ou "calcular juros sobre o valor emprestado". É o coração funcional da aplicação.
+
+Persistência de dados 
+Refere-se ao processo de armazenar informações de forma permanente, geralmente em bancos de dados. Por exemplo, quando você salva um adastro de cliente, os dados são persistidos para que possam ser recuperados depois. A persistência garante que os dados não sejam perdidos quando o sistema é desligado.
+
+Apresentação
+É o grau de dependência entre componentes do sistema. Um código com alto acoplamento tem partes muito interligadas, o que dificulta alterações. Já o baixo acoplamento significa que os componentes são mais independentes, facilitando manutenção e reutilização.
+
+Regressões
+São erros que surgem após uma alteração no código, geralmente porque algo que funcionava antes deixou de funcionar. Aplicar prinípios como o OCP ajuda a evitar regressões, pois você estende o comportamento sem modificar o que já está funcionando.
+
+Subclasses e Superclasses
+Superclass é uma classe mais genérica, que define comportamentos comuns.
+Subclass é uma classe mais específica, que herda da superclass e pode adicionar ou modificar comportamentos.
+Por exemplo, Animal pode ser uma superclass, e Cachorro uma subclass que herda características de Animal.
+
+Polimorfismo 
+É acapacidade de usar diferentes classes de forma interambiável, desde que elas compartilhem uma interface ou hernaça comum. Por exemplo, se Cachorro e Gato são subclasses de Animal, você pode tratá-los como Animal e chamar métodos como emitirSom(), mesmo que cada um implemente esse método de forma diferente.
+
+Módulos de baixo/alto nível
+Módulos de alto nível são responsáveis por regras de negócio e decisões importantes.
+Módulos de baixo nível lidam com detalhes ténicos, como acesso a banco de dados ou envio de e-mails.
+O DIP (Dependency Inversion Principle) sugere que os módulos de alto nível não devem depender diretamente dos de baixo nível, mas sim de abstrações
+
+Abstrações 
+São representações genéricas de comportamentos ou estruturas. Interfaces e classes abstratas são exemplosde abstrações. Elas permitem que você defina o que deve ser feito, sem se preocupar com como será feito - isso fica por conta das implementações concretas.
+
+Classe abstratas
+Uma classe abstrata é uma estrutura que serve como modelo base para outras classes, mas não pode ser instanciada diretamente. Ela pode conter tanto métodos implementados (Com lógica definida) quanto métodos abstratos (sem implementação, apenas a assinatura). O objetio de uma classe abstrata é definir um comportamento comum que será compartilhado por todas as suas subclasses, mas deixando espaço para que cada uma implemente detalhes específicos. Por exemplo, uma classe abstrata chamada Animal pode ter um método abstrato emitirSom(), que será implementado de forma diferente por subclasses como Cachorro ou Gato. Usar classes abstratas ajuda a organizar o ódigo, evitar duplicações e garantir que certas funcionalidades sejam obrigatoriamente implementadas pelas subclasses.
+
+Interface
+Uma interface é um tipo espeial de estrutura que define um conjunto de métodos que uma classe deve implementar, mas não contém nenhuma lógica interna - ou seja, todos os métodos são apenas assinaturas, sem corpo. Interfaes são usadas para estabelecer contratos entre diferentes partes do sistema, permitindo que classes diferentes possam ser tratadas de forma uniforme se seguirem a mesma interface. Por exemplo, uma interfae Iprimivel pode exiger que qualquer classe que a implemente tenha um método imprimir(). Isso permite que você escreva código que funcione com qualquer onbjeto "imprimível", sem se preoupar com a classe específica. Interfaces promovem flexibilidade, desacoplamento e failitam o uso de polimorfismo, pois diferentes classes podem ser usadas de forma intercambiável se seguirem a mesma interface.
+
+Injeção de dependências 
+É uma técnica onde as dependências de uma classe são fornecidas de fora, em vez de serem criadas dentro dela. Isso facilita testes, manutenção e desacoplamento. Por exemplo, ao invés de uma classe criar um objeto de banco de dados, ela recebe esse objeto já pronto.
+
+Desacoplado
+Significa que os componentes do sistema não estão fortemente ligados uns aos outros. Um sistema desacoplado é mais fácil de modificar, testar e escalar, pois mudanças em uma parte não afetam diretamente outras partes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

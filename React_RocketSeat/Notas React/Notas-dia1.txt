@@ -1,0 +1,28 @@
+Propriedades -> dados passados de pai para filho
+Contextos -> dados compartilhados de forma global na aplicação
+
+Nullish Coalescing (??)
+Is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
+
+Optional chanining (?.)
+Is an operator accesses an object's property or calls a function. If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error.
+
+The ?. operator is like the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined
+
+
+
+React Hooks foram introduzidos no React 16.8 para permitir ouso de estado e outras funcionalidades
+
+O React conta com os seus próprios hooks, sendo os principais: useState, useEffect e useContext e os complementares: useRef, useMemo, useCallback, useReducer , useTransition e outros.
+O useState é um Hook do React que permite gerenciar o estado dentro de um componente funcional. 
+
+- Ele armazena um valor e fornece uma função para atualizá-lo, garantindo que o React saiba quando re-renderizar o componente.
+- Você pode transportar valores das (props) para um estado e então eles serão mutáveis.
+- Não há um limite de estados para um componente.
+Sintaxe básica
+- O `useState` recebe um valor inicial em seu parâmetro
+- Ele retorna uma *tupla*, sendo o primeiro índice o valor do estado e o segundo a função para atualizar o estado.
+    - `useState(0)`: Define o estado inicial como `0`.
+    - `contador`: Armazena o valor atual do estado.
+    - `setContador`: Função usada para atualizar o estado.
+- Quando `setContador(novoValor)` é chamado, o componente re-renderiza automaticamente.
